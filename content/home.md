@@ -1,6 +1,6 @@
 # Markdown
 
-![Imagen de Markdown](../images/markdown-imagen.jpg)
+![Imagen de Markdown](https://th.bing.com/th/id/OIP.6AyAI_1yfgmfWEb69UNerAAAAA?w=285&h=171&c=7&r=0&o=5&pid=1.7)
 
 ## ¿Qué es Markdown?
 
