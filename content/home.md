@@ -1,6 +1,6 @@
 # Markdown
 
-![Imagen de Markdown](/images/markdown-imagen.jpg)
+![Imagen de Markdown](../images/markdown-imagen.jpg)
 
 ## ¿Qué es Markdown?
 
