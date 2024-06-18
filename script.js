@@ -1,59 +1,91 @@
-// Cuando el DOM esté completamente cargado, se ejecutará la función de callback.
 document.addEventListener("DOMContentLoaded", function () {
-  // Primero, verificamos si la biblioteca 'marked' está disponible. 
-  // 'marked' es una biblioteca que nos permite convertir texto en formato Markdown en HTML.
-  // Si 'marked' no está disponible, mostramos un mensaje de error en la consola y terminamos la función.
   if (typeof marked === "undefined") {
     console.error("Marked.js no está cargado correctamente");
     return;
   }
 
-  // Luego, llamamos a la función 'loadContent' para cargar el contenido del archivo 'home.md'.
-  // La función 'loadContent' se encargará de cargar el contenido del archivo y renderizarlo en el elemento HTML con el id 'content'.
   loadContent(null, "home.md");
 });
 
-// Esta es la función 'loadContent' que se encarga de cargar el contenido del archivo Markdown y renderizarlo en el HTML.
 function loadContent(event, markdownFile) {
-  // Si se proporciona un evento, lo evitamos para evitar que se ejecute la acción por defecto.
   if (event) {
     event.preventDefault();
   }
 
-  // Utilizamos la API fetch para obtener el contenido del archivo Markdown.
   fetch("content/" + markdownFile)
     .then((response) => response.text())
     .then((markdown) => {
-      // Luego, verificamos nuevamente si 'marked' está disponible.
-      // Si 'marked' no está disponible, lanzamos un error.
       if (typeof marked === "undefined") {
         throw new Error("Marked.js no está cargado correctamente");
       }
 
-      // Finalmente, utilizamos la función 'parse' de 'marked' para convertir el contenido Markdown en HTML y lo insertamos en el elemento HTML con el id 'content'.
-      document.getElementById("content").innerHTML = marked.parse(markdown);
+      const modal = document.getElementById("modal");
+      const markdownContent = document.getElementById("markdown-content");
+      markdownContent.innerHTML = marked.parse(markdown);
+      modal.style.display = "block";
     })
     .catch((error) => {
-      // Si ocurre algún error al cargar el archivo Markdown, lo mostramos en la consola.
       console.error("Error loading markdown file:", error);
     });
 }
 
+// Obtener el modal y el botón de cierre
+var modal = document.querySelector('.modal');
+var closeBtn = document.querySelector('.close');
 
-// Obtener el botón de desplazamiento hacia arriba
+// Función para cerrar el modal
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Cerrar el modal cuando se haga clic en el botón de cierre
+closeBtn.onclick = function() {
+  closeModal();
+}
+
+// Cerrar el modal cuando se haga clic fuera del contenido del modal
+window.onclick = function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+}
+
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Mostrar u ocultar el botón según la posición de desplazamiento
-window.onscroll = function() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+// Función para verificar el desplazamiento y mostrar/ocultar el botón
+function checkScroll() {
+  // Obtener la posición actual del scroll
+  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Mostrar el botón si el scroll es mayor a 100px, ocultarlo si no
+  if (scrollPosition > 100) {
     scrollToTopBtn.style.display = "block";
   } else {
     scrollToTopBtn.style.display = "none";
   }
-};
+}
 
-// Desplazarse hacia arriba cuando se hace clic en el botón
-scrollToTopBtn.onclick = function() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-};
+// Llamar a checkScroll cuando la página se cargue y cada vez que se haga scroll
+window.addEventListener("scroll", checkScroll);
+window.addEventListener("load", checkScroll); // Para asegurarnos de que se compruebe al cargar la página
+
+// Función para realizar el scroll suavemente
+function scrollToTop() {
+  var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  var scrollStep = -currentScroll / 20; // Ajusta el número más alto para hacer el scroll más suave
+
+  function scrollAnimation() {
+    if (document.documentElement.scrollTop !== 0 || document.body.scrollTop !== 0) {
+      window.scrollBy(0, scrollStep);
+      window.requestAnimationFrame(scrollAnimation);
+    }
+  }
+
+  scrollAnimation();
+}
+
+// Detecta el clic en el botón y llama a la función de scroll suave
+scrollToTopBtn.addEventListener("click", function () {
+  scrollToTop();
+});
+
