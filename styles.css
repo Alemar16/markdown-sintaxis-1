@@ -9,11 +9,12 @@ body {
 .logo {
   width: 80px;
   height: auto;
-  margin-left: 10px;
 }
+
 
 /* Navigation styles */
 nav {
+  font-family: 'Poppins', sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,29 +31,67 @@ nav {
 nav .logo {
   display: inline-block;
   font-size: 1.5em;
-  margin-right: 20px;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 nav ul {
   list-style: none;
   display: inline;
   padding: 0;
-  margin: 0;
+  margin-right: 15px;
 }
 
 nav ul li {
   display: inline;
-  margin-right: 10px;
+  margin-left: 20px;
 }
-
 nav ul li a {
-  color: white;
+  color: #fbfbfb;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
   text-decoration: none;
+  font-size: 18px; /* Ajusta el tamaño del texto según tus preferencias */
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #054d99; /* Cambia el color al azul */
+  
 }
+
+/* Estilos adicionales si es necesario */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #054d99;
+  background-color: #c0c1c2;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 /* Content styles */
 #content {
@@ -62,7 +101,7 @@ nav ul li a:hover {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 140px;
+  margin-top: 160px;
   position: relative; /* Necesario para posicionar el ::before relativo a #content */
   overflow: hidden; /* Evita que el ::before se desborde del contenedor */
 }
@@ -101,6 +140,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+ font-family: 'Poppins', sans-serif;
 }
 
 .footer-text {
