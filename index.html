@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markdown Documentation</title>
+
+    <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- marked js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- font awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -14,34 +23,44 @@
 
   <body>
     <nav>
-      <img class="logo" src="/images/logo.png" alt="logo-alemar16" />
+      <img
+        href="#"
+        data-file="home.md"
+        onclick="loadContent(event, 'home.md')"
+        class="logo"
+        src="https://scontent.fcor9-1.fna.fbcdn.net/v/t39.30808-6/448553141_10233342839934645_7495622471911143686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=MULA6RL1C10Q7kNvgEjONrE&_nc_ht=scontent.fcor9-1.fna&oh=00_AYACMl7upl9FICshl64EGaPnne1VzqW7F5EzqlxN5vsB0g&oe=6676BA5E"
+        alt="logo-alemar16"
+      />
       <ul>
-        <li>
-          <a
-            href="#"
-            data-file="home.md"
-            onclick="loadContent(event, 'home.md')"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            data-file="markdown-basics.md"
-            onclick="loadContent(event, 'markdown-basics.md')"
-            >Markdown Basics</a
-          >
+        <li class="dropdown">
+          <a href="#">Markdown <i class="fa fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a
+              href="#"
+              data-file="markdown-basics.md"
+              onclick="loadContent(event, 'markdown-basics.md')"
+              >Sintaxis Básica</a
+            >
+            <a
+              href="#"
+              data-file="markdown-extended.md"
+              onclick="loadContent(event, 'markdown-extended.md')"
+              >Sintaxis Extendido</a
+            >
+          </div>
         </li>
         <li>
           <a
             href="#"
             data-file="about.md"
             onclick="loadContent(event, 'about.md')"
-            >About Me</a
+            >Acerca de</a
           >
         </li>
       </ul>
     </nav>
+    <div>
+    </div>
     <div id="content">
       <!-- Content will be loaded here -->
     </div>
@@ -52,22 +71,25 @@
       <div class="container">
         <div class="footer-content">
           <p class="footer-text">
-            &copy; 2024 <strong>Alemar16</strong>. Todos los derechos
-            reservados.
+            &copy; 2024 Todos los derechos
+            reservados. Hecho con 🎶 por <strong>Alemar16</strong>.
           </p>
           <ul class="footer-social">
             <li>
-              <a href="https://twitter.com/" aria-label="Twitter"
-                ><i class="fab fa-twitter"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://github.com/" aria-label="GitHub"
+              <a 
+              href="https://github.com/Alemar16"
+              target="_blank"
+              rel="noopener noreferrer" 
+              aria-label="GitHub"
                 ><i class="fab fa-github"></i
               ></a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/" aria-label="LinkedIn"
+              <a 
+              href="https://www.linkedin.com/in/armando-mart%C3%ADnez-zambrano/"
+              target="_blank"
+              rel="noopener noreferrer" 
+              aria-label="LinkedIn"
                 ><i class="fab fa-linkedin"></i
               ></a>
             </li>
