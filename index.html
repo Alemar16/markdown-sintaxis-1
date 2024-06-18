@@ -15,88 +15,113 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
 
   <body>
     <nav>
-      <img
-        href="#"
-        data-file="home.md"
-        onclick="loadContent(event, 'home.md')"
-        class="logo"
-        src="https://scontent.fcor9-1.fna.fbcdn.net/v/t39.30808-6/448553141_10233342839934645_7495622471911143686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=MULA6RL1C10Q7kNvgEjONrE&_nc_ht=scontent.fcor9-1.fna&oh=00_AYACMl7upl9FICshl64EGaPnne1VzqW7F5EzqlxN5vsB0g&oe=6676BA5E"
-        alt="logo-alemar16"
-      />
+      <img href="#" data-file="home.md" onclick="loadContent(event, 'home.md')" class="logo" src="https://scontent.fcor9-1.fna.fbcdn.net/v/t39.30808-6/448553141_10233342839934645_7495622471911143686_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=MULA6RL1C10Q7kNvgEjONrE&_nc_ht=scontent.fcor9-1.fna&oh=00_AYACMl7upl9FICshl64EGaPnne1VzqW7F5EzqlxN5vsB0g&oe=6676BA5E" alt="logo-alemar16" />
       <ul>
         <li class="dropdown">
           <a href="#">Markdown <i class="fa fa-caret-down"></i></a>
           <div class="dropdown-content">
-            <a
-              href="#"
-              data-file="markdown-basics.md"
-              onclick="loadContent(event, 'markdown-basics.md')"
-              >Sintaxis Básica</a
-            >
-            <a
-              href="#"
-              data-file="markdown-extended.md"
-              onclick="loadContent(event, 'markdown-extended.md')"
-              >Sintaxis Extendido</a
-            >
+            <a href="#" data-file="markdown-basics.md" onclick="loadContent(event, 'markdown-basics.md')">Sintaxis Básica</a>
+            <a href="#" data-file="markdown-extended.md" onclick="loadContent(event, 'markdown-extended.md')">Sintaxis Extendido</a>
           </div>
         </li>
         <li>
-          <a
-            href="#"
-            data-file="about.md"
-            onclick="loadContent(event, 'about.md')"
-            >Acerca de</a
-          >
+          <a href="#" data-file="about.md" onclick="loadContent(event, 'about.md')">Acerca de</a>
         </li>
       </ul>
     </nav>
-    <div>
-    </div>
-    <div id="content">
-      <!-- Content will be loaded here -->
-    </div>
+    <section>
+      <h1>Markdown</h1>
+      
+      <p><img src="/images/markdown.jpeg" alt="Imagen de Markdown"></p>
+      
+      <h2>¿Qué es Markdown?</h2>
+      
+      <p>Markdown es un lenguaje de marcado ligero creado por John Gruber en 2004. A diferencia de los editores WYSIWYG, Markdown utiliza una sintaxis simple para dar formato al texto. Los archivos Markdown tienen extensiones <code>.md</code> o <code>.markdown</code> y pueden abrirse en cualquier aplicación de edición de texto.</p>
+      
+      <h2>¿Por qué usar Markdown?</h2>
+      
+      <ul>
+      <li>Es <strong>versátil</strong> y se puede usar para crear sitios web, documentos, notas, libros, presentaciones, correos electrónicos y documentación técnica.</li>
+      <li>Es <strong>portátil</strong> y los archivos se pueden abrir en prácticamente cualquier aplicación.</li>
+      <li>Es <strong>independiente de la plataforma</strong> y se puede crear en cualquier dispositivo y sistema operativo.</li>
+      <li>Está <strong>preparado para el futuro</strong> y seguirá siendo legible incluso si la aplicación deja de funcionar.</li>
+      <li>Es ampliamente <strong>compatible</strong> con sitios web como <a href="https://reddit.com/">Reddit</a> y <a href="https://github.com/">Github</a>, y muchas aplicaciones.</li>
+      </ul>
+      
+      <h2>¿Para qué sirve Markdown?</h2>
+      
+      <ul>
+      <li><strong>Sitios web</strong>: Utiliza generadores de sitios estáticos como <a href="https://jekyllrb.com/">Jekyll</a> o CMS como <a href="https://ghost.org/docs/">Ghost</a> para crear sitios web.</li>
+      <li><strong>Documentos</strong>: Crea y exporta documentos básicos a PDF o HTML usando aplicaciones como <a href="https://ia.net/writer">iA Writer</a>, <a href="https://ghostwriter.kde.org/es/">Ghostwriter</a> o <a href="https://dillinger.io/">Dillinger</a>.</li>
+      <li><strong>Notas</strong>: Toma notas con aplicaciones como <a href="https://obsidian.md/">Obsidian</a>, <a href="https://simplenote.com/">Simplenote</a>, <a href="https://bear.app/">Bear</a> o <a href="https://joplinapp.org/">Joplin</a>.</li>
+      <li><strong>Libros</strong>: Autopublica novelas usando servicios como <a href="https://leanpub.com/">Leanpub</a>.</li>
+      <li><strong>Presentaciones</strong>: Genera presentaciones con herramientas como <a href="https://remarkjs.com/">Remark</a>, <a href="https://jdan.github.io/cleaver/">Cleaver</a>, <a href="https://marp.app/">Marp</a>, <a href="https://www.deckset.com/">Deckset</a> o <a href="https://hyperdeck.io/">Hyperdeck</a>.</li>
+      <li><strong>Correo electrónico</strong>: Escribe correos electrónicos usando la extensión <a href="https://markdown-here.com/">Markdown Here</a>.</li>
+      <li><strong>Colaboración</strong>: Comunícate con aplicaciones como <a href="https://slack.com/">Slack</a>, <a href="https://discord.com/">Discord</a>, <a href="https://js.wiki/">Wiki.js</a> y <a href="https://mattermost.com/">Mattermost</a>.</li>
+      <li><strong>Documentación</strong>: Crea sitios de documentación con <a href="https://readthedocs.org/">Read the Docs</a>, <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://docusaurus.io/">Docusaurus</a>, <a href="https://vuepress.vuejs.org/">VuePress</a> o <a href="https://jekyllrb.com/">Jekyll</a>.</li>
+      </ul>
+      
+      <h2>Sabores de Markdown</h2>
+      
+      <p>Los "sabores" de Markdown se refieren a las diferentes variaciones o implementaciones de la sintaxis de Markdown que utilizan distintas aplicaciones y plataformas. Aunque Markdown tiene una <a href="https://daringfireball.net/projects/markdown/syntax">sintaxis básica estandarizada</a>, muchas aplicaciones han extendido o modificado ligeramente esta sintaxis para adaptarla a sus necesidades específicas.</p>
+      
+      <p>Algunos ejemplos de sabores de Markdown incluyen:</p>
+      
+      <ol>
+      <li><a href="https://commonmark.org/">CommonMark</a>: Un sabor que busca estandarizar y clarificar la sintaxis original de Markdown.</li>
+      <li><a href="https://github.github.com/gfm/">GitHub Flavored Markdown (GFM)</a>: Utilizado por GitHub, agrega características como menciones, referencias a problemas y solicitudes de extracción, y bloques de código con resaltado de sintaxis.</li>
+      <li><a href="https://fletcher.github.io/MultiMarkdown-6/">MultiMarkdown</a>: Extiende la sintaxis original con características como notas al pie, tablas y metadatos.</li>
+      <li><a href="https://michelf.ca/projects/php-markdown/extra/">Markdown Extra</a>: Otro sabor popular que agrega características como atributos de ID/clase, definiciones de listas, notas al pie y tablas.</li>
+      </ol>
+      
+      <p>Dado que cada aplicación puede usar un sabor diferente, es crucial familiarizarse con la sintaxis específica utilizada por la aplicación elegida. Esto garantizará que el formato de tu documento sea consistente y se represente correctamente.</p>
+      
+      <h2>Recursos adicionales</h2>
+      
+      <ul>
+      <li><a href="https://daringfireball.net/projects/markdown/">Documentación original de Markdown por John Gruber</a></li>
+      <li><a href="https://www.markdowntutorial.com/">Tutorial interactivo de Markdown en línea</a></li>
+      <li><a href="https://github.com/mundimark/awesome-markdown">Lista de herramientas y recursos de aprendizaje "Awesome Markdown"</a></li>
+      <li><a href="https://dave.autonoma.ca/blog/2019/05/22/typesetting-markdown-part-1/">Serie "Markdown Typesetting" sobre la creación de documentos con pandoc y ConTeXt</a></li>
+      </ul>
+    </section>
     <button id="scrollToTopBtn" title="Volver al inicio">
       <i class="fas fa-arrow-up"></i>
     </button>
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p class="footer-text">
-            &copy; 2024 Todos los derechos
-            reservados. Hecho con 🎶 por <strong>Alemar16</strong>.
-          </p>
-          <ul class="footer-social">
-            <li>
-              <a 
-              href="https://github.com/Alemar16"
-              target="_blank"
-              rel="noopener noreferrer" 
-              aria-label="GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </li>
-            <li>
-              <a 
-              href="https://www.linkedin.com/in/armando-mart%C3%ADnez-zambrano/"
-              target="_blank"
-              rel="noopener noreferrer" 
-              aria-label="LinkedIn"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p class="footer-text">&copy; 2024 Todos los derechos reservados.</p> 
+        <p class="footer-text">Hecho con 🎶 por <strong>Alemar16</strong>.</p>
       </div>
-    </footer>
+      
+      <ul class="footer-social">
+        <li>
+          <a href="https://github.com/Alemar16" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/armando-mart%C3%ADnez-zambrano/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="markdown-content"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
