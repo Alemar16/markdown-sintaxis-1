@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor de Markdown</title>
+    <link rel="stylesheet" href="codemirror.min.css" />
+    <link rel="stylesheet" href="editormd.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script src="editormd.min.js"></script>
+    <style>
+      /* Estilos para el modo oscuro */
+      body {
+        background-color: #f8f6f6;
+        color: #d4d4d4;
+      }
+
+      .editormd {
+        background-color: #292929;
+        color: #d4d4d4;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+          /* Sombra inferior */ 0 -2px 4px rgba(255, 255, 255, 0.1),
+          /* Sombra superior */ inset 0 2px 4px rgba(255, 255, 255, 0.1),
+          /* Relieve superior interno */ inset 0 -2px 4px rgba(0, 0, 0, 0.2); /* Relieve inferior interno */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="editor">
+      <!-- El contenido del editor se renderizará aquí -->
+    </div>
+    <script>
+      var editor = editormd("editor", {
+          width: 1000,
+          height: 500,
+          path: "./lib/",  // Asegúrate de que esta ruta sea correcta
+          theme: "dark",
+          previewTheme: "dark",
+          editorTheme: "monokai",
+          markdown: "", // Puedes añadir contenido inicial en Markdown aquí
+          codeFold: true, // Habilitar el plegado de código
+          saveHTMLToTextarea: true, // Guardar HTML en un área de texto
+          searchReplace: true, // Habilitar búsqueda y reemplazo
+          watch : true, // Live preview
+          htmlDecode: "style,script,iframe|on*", // Opciones para decodificar HTML
+          toolbar  : true, // Mostrar la barra de herramientas
+          emoji: true, // Habilitar soporte para emojis
+          taskList: true, // Habilitar soporte para listas de tareas
+          tex: true, // Habilitar soporte para LaTeX
+          flowChart: true, // Habilitar soporte para diagramas de flujo
+          sequenceDiagram: true, // Habilitar soporte para diagramas de secuencia
+          toc: true, // Tabla de contenidos
+          tocm: true, // Tabla de contenidos en modo mínimo
+          tocContainer: "#toc-container", // Contenedor personalizado para la tabla de contenidos
+          tocDropdown: true, // Tabla de contenidos desplegable
+          autoLoadModules: true, // Cargar módulos automáticamente
+          imageUpload: true, // Habilitar subida de imágenes
+          imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"], // Formatos de imagen permitidos
+          imageUploadURL: "./php/upload.php", // Ruta del script para subir imágenes
+      });
+  </script>
+  </body>
+</html>
